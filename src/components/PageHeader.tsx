@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 interface HeaderProps {
-    icon: string;
-    parentCallback: any;
+  icon: string
+  parentCallback: any
 }
 
- 
 const PageHeader: React.FC<HeaderProps> = ({ parentCallback, icon }) => {
-    const [pageName, setPageName] = useState("");
-        
-    useEffect(() => {
-        parentCallback(pageName, icon);
-    }, [pageName]);
+  const [pageName, setPageName] = useState('')
 
-    return (
+  useEffect(() => {
+    parentCallback(pageName, icon)
+  }, [pageName])
+
+  return (
         <header>
           <div className="current-page">
             <div className="page-button-outer">
@@ -22,13 +21,13 @@ const PageHeader: React.FC<HeaderProps> = ({ parentCallback, icon }) => {
                   <div>
                     <div className="page-button-icon">
                       <span role="img" aria-label="Page Icon">
-                        {icon ? icon : ""}
+                        {icon ?? ''}
                       </span>
                     </div>
                     <div className="page-button-text">
                       <textarea
                         value={pageName}
-                        onChange={(e) => setPageName(e.target.value)}
+                        onChange={(e) => { setPageName(e.target.value) }}
                         placeholder="Enter page name"
                       ></textarea>
                     </div>
@@ -38,7 +37,7 @@ const PageHeader: React.FC<HeaderProps> = ({ parentCallback, icon }) => {
             </div>
           </div>
         </header>
-    )
+  )
 }
 
-export default PageHeader;
+export default PageHeader

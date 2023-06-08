@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 import PageHeader from "./components/PageHeader";
 import PageContent from "./components/PageContent";
 import "./components/styles.css";
-
+import "./app.css"
 const App: React.FC = () => {
   const [pageName, setPageName] = useState("");
   const [icon, setIcon] = useState();
@@ -29,5 +29,4 @@ const App: React.FC = () => {
     </>
   );
 };
-
 export default App;

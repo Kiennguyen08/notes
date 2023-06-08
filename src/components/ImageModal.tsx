@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 
 interface ModalProps {
-  open: boolean;
-  children: any;
-  close: any;
+  open: boolean
+  children: any
+  close: any
 }
 
 const ImageModal: React.FC<ModalProps> = ({ open, close, children }) => {
-  if (!open) return null;
+  if (!open) return null
 
   return (
     <>
@@ -16,7 +16,7 @@ const ImageModal: React.FC<ModalProps> = ({ open, close, children }) => {
         <div className="image-modal-inner">{children}</div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ImageModal;
+export default ImageModal
